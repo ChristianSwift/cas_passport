@@ -39,7 +39,7 @@ class ResourceOwner implements ResourceOwnerInterface
     {
         return $this->getValueByKey(
             $this->response,
-            Arr::get(static::$fields, 'id', 'id')
+            Arr::get(static::$fields, 'sub', 'sub')
         );
     }
 
@@ -51,7 +51,7 @@ class ResourceOwner implements ResourceOwnerInterface
     public function getEmail()
     {
         return $this->getValueByKey(
-            $this->response,
+            $this->response["data"],
             Arr::get(static::$fields, 'email', 'email')
         );
     }
